@@ -1,0 +1,37 @@
+[tool.black]
+line-length = 79
+
+[tool.isort]
+profile = "black"
+skip = [
+    '.gitignore',
+    'env',
+    'venv',
+    'logs',
+    'results',
+    'tests',
+    ]
+extend_skip = [
+    '.md',
+    '.json',
+    ]
+known_local_folder = [
+    'pep_parse',
+    ]
+
+[tool.flake8]
+ignore = [
+    'D100'
+    ]
+exclude = [
+    'venv/',
+    'env/',
+    'logs/',
+    'results/',
+    'tests/',
+    './pep_parse/pep_parse/settings.py',
+    './pep_parse/pep_parse/middlewares.py',
+    '__init__.py',
+    ]
+max-complexity = 10
+max-line-length = 79
