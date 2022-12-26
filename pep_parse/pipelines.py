@@ -16,9 +16,9 @@ class PepParsePipeline:
 
     def close_spider(self, spider):
         self.results = (
-            [("Статус", "Количество")]
-            + list(self.result.items())
-            + [("Total", self.total_pep_count)]
+            ("Статус", "Количество"),
+            *self.result.items(),
+            ("Total", self.total_pep_count)
         )
         results_dir = BASE_DIR / "results"
         results_dir.mkdir(exist_ok=True)
